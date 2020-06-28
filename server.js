@@ -19,12 +19,11 @@ app.get("/", (request, response) => {
 
 app.get("/favorites", (request, response) => {
   let favorites=[]
-  db.findAll().then((favs) => { // find all entries in the DB tables
-    favs.forEach((fav) => {
-      favorites.push([fav.broadcaster,fav.hls]) // adds their info to the array
-    })
-    response.send(favorites)
-  })
+  let rows = db.findAll() // find all entries in the DB tables
+	rows.forEach((fav) => {
+		favorites.push([fav.broadcaster,fav.hls]) // adds their info to the array
+	})
+	response.send(favorites)
 })
 
 
