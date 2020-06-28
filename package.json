@@ -1,0 +1,23 @@
+{
+  "name": "hello",
+  "version": "0.0.1",
+  "description": "hello world",
+  "scripts": {
+	"start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/shrmpy/glitch-sqlite"
+  },
+  "keywords": [
+    "glitch",
+    "sqlite"
+  ],
+  "author": "shrmpy",
+  "license": "The Unlicense",
+  "dependencies": {
+	"express": "^4.17.1",
+    "better-sqlite3": "^7.1.0"
+  }
+}
