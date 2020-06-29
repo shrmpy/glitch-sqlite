@@ -4,8 +4,18 @@
 $(function() {
   $.get('/favorites', function(favorites) {
     favorites.forEach(function(fav) {
-		let item = '<a href="' +fav[1]+ '" target="_blank">' +fav[0]+ '</a>'
-      $('<li></li>').text(item).appendTo('ul#favorites');
+		$li = $('<li/>', {
+			'class': 'favorite-row'
+		});
+		$li.append(
+			$('<a/>', {
+				'class': 'favorite-link',
+				'href': fav[1],
+				'target': '_blank',
+				text: fav[0]
+			})
+		);
+		$('ul#favorites').append($li);
     });
   });
 
